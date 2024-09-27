@@ -11,3 +11,6 @@ target_link_libraries(reactor_server ACE)
 
 add_executable(client src/client.cpp)
 target_link_libraries(client ACE)
+
+add_executable(proactor_server src/proactor_server.cpp)
+target_link_libraries(proactor_server ACE)
