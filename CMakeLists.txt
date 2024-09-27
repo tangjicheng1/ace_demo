@@ -8,3 +8,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O3 -Wall -Wextra ")
 
 add_executable(reactor_server src/reactor_server.cpp)
 target_link_libraries(reactor_server ACE)
+
+add_executable(client src/client.cpp)
+target_link_libraries(client ACE)
