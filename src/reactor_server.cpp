@@ -15,7 +15,7 @@ class MyEventHandler : public ACE_Event_Handler {
         client_stream_.close();
     }
 
-    virtual int handle_input(ACE_HANDLE h = ACE_INVALID_HANDLE) override {
+    virtual int handle_input([[maybe_unused]] ACE_HANDLE h = ACE_INVALID_HANDLE) override {
         char buffer[1024];
         ssize_t bytes_received = client_stream_.recv(buffer, sizeof(buffer));
         if (bytes_received > 0) {
@@ -52,7 +52,7 @@ class MyAcceptor : public ACE_Event_Handler {
         acceptor_.close();
     }
 
-    virtual int handle_input(ACE_HANDLE h = ACE_INVALID_HANDLE) override {
+    virtual int handle_input([[maybe_unused]] ACE_HANDLE h = ACE_INVALID_HANDLE) override {
         ACE_SOCK_Stream client_stream;
         if (acceptor_.accept(client_stream) == -1) {
             ACE_DEBUG((LM_ERROR, "Accept failed\n"));
